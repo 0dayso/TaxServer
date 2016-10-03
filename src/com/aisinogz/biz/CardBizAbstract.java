@@ -5,43 +5,36 @@ import org.apache.log4j.Logger;
 import com.aisinogz.dev.GoldTaxDev;
 import com.aisinogz.response.Response;
 import com.aisinogz.util.DispatchUtil;
-import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.Dispatch;
 
 public abstract class CardBizAbstract {
 	private static final Logger LOGGER = Logger.getLogger(CardBizAbstract.class);
-	protected static ActiveXComponent goldTaxCard = null;
-
-	static {
-		goldTaxCard = GoldTaxDev.getGoldTaxCard();
-	}
 
 	protected String getField(String fieldName) {
-		return DispatchUtil.getField(goldTaxCard, fieldName);
+		return DispatchUtil.getField(GoldTaxDev.getGoldTaxCard(), fieldName);
 	}
 
 	protected void setField(String fieldName, Object value) {
-		DispatchUtil.setField(goldTaxCard, fieldName, value);
+		DispatchUtil.setField(GoldTaxDev.getGoldTaxCard(), fieldName, value);
 	}
 
 	protected void call(String methodName) {
-		Dispatch.call(goldTaxCard, methodName);
+		Dispatch.call(GoldTaxDev.getGoldTaxCard(), methodName);
 	}
 
 	protected void put(String fieldName, Object value) {
-		Dispatch.put(goldTaxCard, fieldName, value);
+		Dispatch.put(GoldTaxDev.getGoldTaxCard(), fieldName, value);
 	}
 
 	protected void batchUpload(String param) {
-		Dispatch.call(goldTaxCard, "BatchUpload", param);
+		Dispatch.call(GoldTaxDev.getGoldTaxCard(), "BatchUpload", param);
 	}
 
 	public Response handler() throws Exception {
-		if (OpenCardBiz.isOpenCard() != true) {
-			OpenCardBiz openCardBiz = new OpenCardBiz();
-			openCardBiz.process();
+		if (GoldTaxDev.isOpenCard() != true) {
+			GoldTaxDev.openCard();
 			// 金税盘打开成功才能执行下一步操作
-			if (OpenCardBiz.isOpenCard() != true) {
+			if (GoldTaxDev.isOpenCard() != true) {
 				LOGGER.error("开启金税盘失败");
 				throw new Exception("开启金税盘失败");
 			}
