@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GBK"?>
+<FPXF>
+	<DATA>
+		<DYJMC>${printName!''}</DYJMC>
+		<QDDYFS>${listPrintType!'1'}</QDDYFS>
+		<LEFT>${left!'0'}</LEFT>
+		<TOP>${top!'0'}</TOP>
+	</DATA>
+</FPXF>

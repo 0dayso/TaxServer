@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<FPXT>
+	<INPUT>
+		<GoodsNo>
+			<GoodsNoVer>${GoodsNoVer!''}</GoodsNoVer>
+			<GoodsTaxNo>${GoodsTaxNo!''}</GoodsTaxNo>
+			<TaxPre>${TaxPre!'0'}</TaxPre>
+			<TaxPreCon>${TaxPreCon!''}</TaxPreCon>
+			<ZeroTax>${ZeroTax!''}</ZeroTax>
+			<CropGoodsNo>${CropGoodsNo!''}</CropGoodsNo>
+			<TaxDeduction>${TaxDeduction!''}</TaxDeduction>
+		</GoodsNo>
+	</INPUT>
+</FPXT>

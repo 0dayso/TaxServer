@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="GBK"?>
+<FPFP>
+	<DATA>
+		<HYSY>${hysy}</HYSY><!-- 海洋石油 1支持,0不支持 -->
+	</DATA>
+</FPFP>

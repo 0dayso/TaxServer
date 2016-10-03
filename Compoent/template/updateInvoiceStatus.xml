@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<Info>
+	<SUCC>
+		<FP><!-- 可以多个 -->
+			<FPDM>${FPDM}</FPDM>
+			<FPHM>${FPHM}</FPHM>
+			<XLH>${XLH}</XLH>
+		</FP>
+	</SUCC>
+	<FAIL>
+		<FP><!-- 可以多个 -->
+			<FPDM></FPDM>
+			<FPHM></FPHM>
+			<XLH></XLH>
+			<CODE></CODE>
+			<MESS></MESS>
+		</FP>
+	</FAIL>
+</Info>
