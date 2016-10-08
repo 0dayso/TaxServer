@@ -6,6 +6,7 @@ import java.util.List;
 import junit.framework.TestCase;
 
 import com.aisinogz.biz.InvoiceBiz;
+import com.aisinogz.dev.GoldTaxDev;
 import com.aisinogz.request.Fpmx;
 import com.aisinogz.request.InvoiceRequest;
 
@@ -67,5 +68,10 @@ public class InvoiceBizTest extends TestCase {
 		invoiceBiz.setInvoiceRequest(req);
 		invoiceBiz.setCheckEWM("1");
 		invoiceBiz.handler();
+	}
+
+	public void test2() throws Exception {
+		//GoldTaxDev.openCard();
+		GoldTaxDev.closeCard();
 	}
 }

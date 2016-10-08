@@ -14,6 +14,10 @@ public class GoldTaxDev {
 	private static boolean isOpenCard = false;
 	private static OpenCardResponse openCardResponse = null;
 
+	static {
+		init();
+	}
+
 	public static boolean isOpenCard() {
 		return isOpenCard;
 	}
@@ -49,6 +53,11 @@ public class GoldTaxDev {
 		}
 	}
 
+	/**
+	 * 打开金税盘
+	 * 
+	 * @throws Exception
+	 */
 	public static void openCard() throws Exception {
 		if (isOpenCard == false) {
 			LOGGER.info("开启金税盘操作");
@@ -74,6 +83,9 @@ public class GoldTaxDev {
 		}
 	}
 
+	/**
+	 * 关闭金税盘
+	 */
 	public static void closeCard() {
 		LOGGER.info("关闭金税盘");
 		Dispatch.call(goldTaxCard, "CloseCard");
