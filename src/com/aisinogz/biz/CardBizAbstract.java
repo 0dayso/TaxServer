@@ -6,6 +6,7 @@ import com.aisinogz.dev.GoldTaxDev;
 import com.aisinogz.response.Response;
 import com.aisinogz.util.DispatchUtil;
 import com.jacob.com.Dispatch;
+import com.jacob.com.Variant;
 
 public abstract class CardBizAbstract {
 	private static final Logger LOGGER = Logger.getLogger(CardBizAbstract.class);
@@ -26,8 +27,13 @@ public abstract class CardBizAbstract {
 		Dispatch.put(GoldTaxDev.getGoldTaxCard(), fieldName, value);
 	}
 
-	protected void batchUpload(String param) {
-		Dispatch.call(GoldTaxDev.getGoldTaxCard(), "BatchUpload", param);
+	protected String batchUpload(String param) {
+		Variant variant = Dispatch.call(GoldTaxDev.getGoldTaxCard(), "BatchUpload", param);
+		if (variant != null) {
+			return variant.toString();
+		}
+
+		return null;
 	}
 
 	public Response handler() throws Exception {

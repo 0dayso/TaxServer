@@ -90,6 +90,7 @@ public class InvoiceBiz extends CardBizAbstract {
 	 */
 	private void setInvoiveDetial() {
 		List<Fpmx> listFpmx = invoiceRequest.getListFpmx();
+		String batchUploadRet;
 		if (listFpmx != null && listFpmx.size() > 0) {
 			for (Fpmx fpmx : listFpmx) {
 				setField("ListGoodsName", fpmx.getListGoodsName());
@@ -103,7 +104,8 @@ public class InvoiceBiz extends CardBizAbstract {
 				setField("ListTaxAmount", fpmx.getListTaxAmount());
 
 				// 每行都要设置发票信息
-				batchUpload(getBatchUploadXml(fpmx));
+				batchUploadRet=batchUpload(getBatchUploadXml(fpmx));
+				LOGGER.info(batchUploadRet);
 				// 添加商品明细行
 				call("AddInvList");
 			}
