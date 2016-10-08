@@ -1,6 +1,6 @@
 package com.aisinogz.response;
 
-public class QueryStoreResponse extends Response {
+public class GetInfoResponse extends Response {
 	private String infoTypeCode;
 	private String infoNumber;
 	private String invStock;

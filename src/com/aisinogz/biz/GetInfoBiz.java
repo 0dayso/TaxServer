@@ -3,11 +3,17 @@ package com.aisinogz.biz;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.aisinogz.response.QueryStoreResponse;
+import com.aisinogz.response.GetInfoResponse;
 import com.aisinogz.response.Response;
 
-public class QueryStoreBiz extends CardBizAbstract {
-	private static final Logger LOGGER = Logger.getLogger(QueryStoreBiz.class);
+/**
+ * 查询库存发票
+ * 
+ * @author 陈捷
+ *
+ */
+public class GetInfoBiz extends CardBizAbstract {
+	private static final Logger LOGGER = Logger.getLogger(GetInfoBiz.class);
 	private String infoKind;
 
 	public void setInfoKind(String infoKind) {
@@ -20,7 +26,7 @@ public class QueryStoreBiz extends CardBizAbstract {
 		put("InfoKind", infoKind);
 		call("GetInfo");
 
-		QueryStoreResponse queryStoreResponse = new QueryStoreResponse();
+		GetInfoResponse queryStoreResponse = new GetInfoResponse();
 		queryStoreResponse.setRetCode(getField("RetCode"));
 		queryStoreResponse.setRetMsg(getField("RetMsg"));
 		queryStoreResponse.setInfoTypeCode(getField("InfoTypeCode"));
@@ -34,9 +40,9 @@ public class QueryStoreBiz extends CardBizAbstract {
 
 	@Test
 	public void test1() throws Exception {
-		QueryStoreBiz biz = new QueryStoreBiz();
+		GetInfoBiz biz = new GetInfoBiz();
 		biz.setInfoKind("0");
-		QueryStoreResponse resp = (QueryStoreResponse) biz.handler();
+		GetInfoResponse resp = (GetInfoResponse) biz.handler();
 		if (resp != null) {
 			System.out.println(resp.getInfoTypeCode());
 			System.out.println(resp.getInfoNumber());
