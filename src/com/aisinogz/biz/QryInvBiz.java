@@ -53,6 +53,7 @@ public class QryInvBiz extends CardBizAbstract {
 		qryInvResponse.setInfoBillNumber(getField("InfoBillNumber"));
 		qryInvResponse.setInfoAmount(getField("InfoAmount"));
 		qryInvResponse.setInfoTaxAmount(getField("InfoTaxAmount"));
+		//这两个字段在0425版本里面找不到
 		// qryInvResponse.setInfoInvDate(getField("InfoInvDate"));
 		// qryInvResponse.setPrintFlag(getField("PrintFlag"));
 		qryInvResponse.setUploadFlag(getField("UploadFlag"));
