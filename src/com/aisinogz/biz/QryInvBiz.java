@@ -69,7 +69,7 @@ public class QryInvBiz extends CardBizAbstract {
 		QryInvBiz qryInvBiz = new QryInvBiz();
 		qryInvBiz.setInfoKind("0");
 		qryInvBiz.setInfoTypeCode("5200093140");
-		qryInvBiz.setInfoNumber("11184831");
+		qryInvBiz.setInfoNumber("11184837");
 		QryInvResponse qryInvResponse = (QryInvResponse) qryInvBiz.handler();
 		System.out.println(qryInvResponse.getInfoAmount());
 		System.out.println(qryInvResponse.getInfoTaxAmount());

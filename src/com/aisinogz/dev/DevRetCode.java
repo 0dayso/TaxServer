@@ -12,4 +12,6 @@ public class DevRetCode {
 	public static final String INVOICE_SUCCESS = "4011";// 开票成功
 	public static final String INVOICE_VALID_SUCCESS = "4016";// 发票校验通过
 	public static final String CANCEL_INV_SUCCESS = "6011";// 发票作废成功
+	public static final String GET_INFO_SUCCESS = "3011";// 发票库存查询读取成功；其它为失败
+	public static final String QRY_INV_SUCCESS = "7011";// 发票查询成功；其它失败
 }

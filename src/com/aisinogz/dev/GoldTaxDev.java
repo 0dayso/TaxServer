@@ -43,7 +43,7 @@ public class GoldTaxDev {
 	 */
 	private static void init() {
 		try {
-			LOGGER.debug("初始化组件接口");
+			LOGGER.info("初始化组件接口");
 			goldTaxCard = new ActiveXComponent("TaxCardX.GoldTax");
 			Dispatch.put(goldTaxCard, "CertPassWord", "88888888");
 		} catch (Exception e) {
