@@ -10,7 +10,7 @@ public class IEInvWSCode {
 	/**
 	 * 登记信息查询
 	 */
-	public final static String INTERFACE_CODE_DJXXCX = "PI.sDJXXCX";
+	public final static String INTERFACE_CODE_DJXXCX = "PI.DJXXCX";
 
 	/**
 	 * 发票开具
