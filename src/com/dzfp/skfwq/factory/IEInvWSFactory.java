@@ -37,24 +37,28 @@ public class IEInvWSFactory {
 			// 登记信息查询
 			if (IEInvWSCode.INTERFACE_CODE_DJXXCX.equals(interfaceCode)) {
 				ieInvWS = (IEInvWSAbstract) BeanUtil.getBean("iEInvWSDjxxcx");
+				ieInvWS.setIface(iface);
 				return ieInvWS;
 			}
 
 			// 发票开具
 			if (IEInvWSCode.INTERFACE_CODE_FPKJ.equals(interfaceCode)) {
 				ieInvWS = (IEInvWSAbstract) BeanUtil.getBean("iEInvWSFpkj");
+				ieInvWS.setIface(iface);
 				return ieInvWS;
 			}
 
 			// 库存查询
 			if (IEInvWSCode.INTERFACE_CODE_KCCX.equals(interfaceCode)) {
 				ieInvWS = (IEInvWSAbstract) BeanUtil.getBean("iEInvWSKccx");
+				ieInvWS.setIface(iface);
 				return ieInvWS;
 			}
 
 			// 发票（已开）查询
 			if (IEInvWSCode.INTERFACE_CODE_FPKJCX.equals(interfaceCode)) {
 				ieInvWS = (IEInvWSAbstract) BeanUtil.getBean("iEInvWSFpcx");
+				ieInvWS.setIface(iface);
 				return ieInvWS;
 			}
 

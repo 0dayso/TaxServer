@@ -10,11 +10,18 @@
       http://cxf.apache.org/schemas/jaxws.xsd">
 	<context:annotation-config />
 	<context:component-scan base-package="com.dzfp.service" />
+	<bean id="iEInvWSFactory" class="com.dzfp.skfwq.factory.IEInvWSFactory" />
+	<bean id="iEInvWSError" class="com.dzfp.skfwq.factory.IEInvWSError" />
+	<bean id="iEInvWSDjxxcx" class="com.dzfp.skfwq.factory.usb.IEInvWSDjxxcx" />
+	<bean id="iEInvWSFpcx" class="com.dzfp.skfwq.factory.usb.IEInvWSFpcx" />
+	<bean id="iEInvWSFpkj" class="com.dzfp.skfwq.factory.usb.IEInvWSFpkj" />
+	<bean id="iEInvWSKccx" class="com.dzfp.skfwq.factory.usb.IEInvWSKccx" />
+
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<!-- <jaxws:endpoint id="eInvWebService"
-		implementor="com.dzfp.skfwq.service.impl.IEInvWebServiceImpl" address="/eInvWS" /> -->
+	<jaxws:endpoint id="pInvWebService"
+		implementor="com.pi.skfwq.service.impl.IPInvWebServiceImpl" address="/pInvWS" />
 </beans>
